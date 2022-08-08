@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  testdbapp:
+    image: ${DOCKER_REGISTRY-}testdbapp
+    build:
+      context: .
+      dockerfile: TestDbApp/Dockerfile
+  postgres:
+    image: postgres:13.7
+    restart: always
+    ports:
+    - 5432:5432
+    volumes:
+    - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: Trunghuy0501
+    container_name: CharityDbTest
+volumes:
+  testdbapp:
+  postgres:
