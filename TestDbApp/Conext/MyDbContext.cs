@@ -12,6 +12,6 @@ namespace TestDbApp.Conext
         {
             base.OnModelCreating(builder);
         }
-        public DbSet<Post> Posts { get; set; }
+        public DbSet<CashFlow> CashFlowEntity { get; set; }
     }
 }
